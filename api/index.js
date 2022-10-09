@@ -14,6 +14,9 @@ const connect = async () => {
     }
 };
 
+app.get("/", (req, res) => {
+    res.send("Hello first request!");
+})
 
 app.listen(8800, () => {
     connect();
