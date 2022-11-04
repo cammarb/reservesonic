@@ -45,6 +45,28 @@ router.delete("/:id", async (req, res) => {
     }
 })
 
+// GET
+router.get("/:id", async (req, res) => {
+    try {
+        const studio = await Studio.findById(req.params.id);
+        res.status(200).json(studio);
+    }
+    catch (err) {
+        res.status(500).json(err)
+    }
+})
+
+// GET ALL
+router.get("/", async (req, res) => {
+    try {
+        const studios = await Studio.find();
+        res.status(200).json(studios);
+    }
+    catch (err) {
+        res.status(500).json(err)
+    }
+})
+
 
 router.get("/", (req, res) => {
     res.send("This is the studios endpoint.");
