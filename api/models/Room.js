@@ -24,3 +24,5 @@ const RoomSchema = new mongoose.Schema({
         required: true
     },
 })
+
+export default mongoose.model("Room");
