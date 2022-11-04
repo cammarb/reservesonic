@@ -23,6 +23,8 @@ const connect = async () => {
 //     res.send("Hello first request!");
 // })
 
+app.use(express.json());
+
 app.use("/api/auth", authRoute);
 app.use("/api/users", usersRoute);
 app.use("/api/studios", studiosRoute);
