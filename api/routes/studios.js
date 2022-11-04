@@ -1,9 +1,10 @@
 import express from "express";
 import Studio from "../models/Studio.js";
+import { createError } from "../utils/error.js";
 
 const router = express.Router();
 
-// Create
+// CREATE
 router.post("/", async (req, res) => {
 
     const newStudio = new Studio(req.body);
@@ -57,19 +58,25 @@ router.get("/:id", async (req, res) => {
 })
 
 // GET ALL
-router.get("/", async (req, res) => {
+router.get("/", async (req, res, next) => {
+
+    // const failed = true;
+
+    // if (failed) {
+    //     return next(
+    //         createError(
+    //             401,
+    //             "Sorry! You are not authenticated.")
+    //     );
+    // }
+
     try {
         const studios = await Studio.find();
         res.status(200).json(studios);
     }
     catch (err) {
-        res.status(500).json(err)
+        next(err);
     }
 })
-
-
-router.get("/", (req, res) => {
-    res.send("This is the studios endpoint.");
-});
 
 export default router;
