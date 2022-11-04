@@ -1,8 +1,8 @@
 import mongoose, { Mongoose } from 'mongoose';
 
-const { Schema } = mongoose;
+// const { Schema } = mongoose;
 
-const HotelSchema = new mongoose.Schema({
+const StudioSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -41,4 +41,4 @@ const HotelSchema = new mongoose.Schema({
     },
 })
 
-export default mongoose.model("Studio");
+export default mongoose.model("Studio", StudioSchema);
