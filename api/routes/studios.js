@@ -22,7 +22,11 @@ router.post("/", async (req, res) => {
 // UPDATE
 router.put("/:id", async (req, res) => {
     try {
-        const updateStudio = await Studio.findByIdAndUpdate(req.params.id, { $set: req.body }, { new: true })
+        const updateStudio = await Studio.findByIdAndUpdate(
+            req.params.id,
+            { $set: req.body },
+            { new: true }
+        );
         res.status(200).json(updateStudio);
     }
     catch (err) {
@@ -31,10 +35,10 @@ router.put("/:id", async (req, res) => {
 })
 
 // DELETE
-router.put("/:id", async (req, res) => {
+router.delete("/:id", async (req, res) => {
     try {
-        const deleteStudio = await Studio.findByIdAndDelete(req.params.id, { $set: req.body })
-        res.status(200).json(updateStudio);
+        await Studio.findByIdAndDelete(req.params.id);
+        res.status(200).json("Studio has been deleted.");
     }
     catch (err) {
         res.status(500).json(err)
