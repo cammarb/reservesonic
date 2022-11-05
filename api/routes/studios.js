@@ -1,82 +1,23 @@
 import express from "express";
+import { createStudio, deleteStudio, getAllStudios, getStudio, updateStudio } from "../controllers/studio.js";
 import Studio from "../models/Studio.js";
 import { createError } from "../utils/error.js";
 
 const router = express.Router();
 
 // CREATE
-router.post("/", async (req, res) => {
-
-    const newStudio = new Studio(req.body);
-
-    try {
-        const savedStudio = await newStudio.save();
-        res.status(200).json(savedStudio);
-
-    }
-    catch (err) {
-        res.status(500).json(err)
-    }
-})
-
+router.post("/", createStudio);
 
 // UPDATE
-router.put("/:id", async (req, res) => {
-    try {
-        const updateStudio = await Studio.findByIdAndUpdate(
-            req.params.id,
-            { $set: req.body },
-            { new: true }
-        );
-        res.status(200).json(updateStudio);
-    }
-    catch (err) {
-        res.status(500).json(err)
-    }
-})
+router.put("/:id", updateStudio);
 
 // DELETE
-router.delete("/:id", async (req, res) => {
-    try {
-        await Studio.findByIdAndDelete(req.params.id);
-        res.status(200).json("Studio has been deleted.");
-    }
-    catch (err) {
-        res.status(500).json(err)
-    }
-})
+router.delete("/:id", deleteStudio);
 
 // GET
-router.get("/:id", async (req, res) => {
-    try {
-        const studio = await Studio.findById(req.params.id);
-        res.status(200).json(studio);
-    }
-    catch (err) {
-        res.status(500).json(err)
-    }
-})
+router.get("/:id", getStudio);
 
 // GET ALL
-router.get("/", async (req, res, next) => {
-
-    // const failed = true;
-
-    // if (failed) {
-    //     return next(
-    //         createError(
-    //             401,
-    //             "Sorry! You are not authenticated.")
-    //     );
-    // }
-
-    try {
-        const studios = await Studio.find();
-        res.status(200).json(studios);
-    }
-    catch (err) {
-        next(err);
-    }
-})
+router.get("/", getAllStudios);
 
 export default router;
