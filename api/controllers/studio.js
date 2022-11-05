@@ -1,3 +1,5 @@
+import Studio from "../models/Studio.js";
+
 export const createStudio = async (req, res, next) => {
     const newStudio = new Studio(req.body);
     try {
@@ -9,7 +11,7 @@ export const createStudio = async (req, res, next) => {
     }
 };
 
-export const updateStudio = async (req, res) => {
+export const updateStudio = async (req, res, next) => {
     try {
         const updateStudio = await Studio.findByIdAndUpdate(
             req.params.id,
@@ -19,27 +21,27 @@ export const updateStudio = async (req, res) => {
         res.status(200).json(updateStudio);
     }
     catch (err) {
-        res.status(500).json(err)
+        next(err);
     }
 };
 
-export const deleteStudio = async (req, res) => {
+export const deleteStudio = async (req, res, next) => {
     try {
         await Studio.findByIdAndDelete(req.params.id);
         res.status(200).json("Studio has been deleted.");
     }
     catch (err) {
-        res.status(500).json(err)
+        next(err);
     }
 };
 
-export const getStudio = async (req, res) => {
+export const getStudio = async (req, res, next) => {
     try {
         const studio = await Studio.findById(req.params.id);
         res.status(200).json(studio);
     }
     catch (err) {
-        res.status(500).json(err)
+        next(err);
     }
 };
 
