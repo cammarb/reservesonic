@@ -3,6 +3,10 @@ import { createUser, deleteUser, getAllUsers, getUser, updateUser } from "../con
 
 const router = express.Router();
 
+router.get("/checkauthentication", (req, res, next) => {
+    res.send("You are logged in.");
+});
+
 // CREATE
 router.post("/", createUser);
 

@@ -10,5 +10,7 @@ export const verifyToken = (req, res, next) => {
         if (err) {
             return next(createError(403, "The token is invalid."));
         }
+        req.user = user;
+        next();
     })
 };
