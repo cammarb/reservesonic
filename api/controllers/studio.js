@@ -13,12 +13,12 @@ export const createStudio = async (req, res, next) => {
 
 export const updateStudio = async (req, res, next) => {
     try {
-        const updateStudio = await Studio.findByIdAndUpdate(
+        const updatedStudio = await Studio.findByIdAndUpdate(
             req.params.id,
             { $set: req.body },
             { new: true }
         );
-        res.status(200).json(updateStudio);
+        res.status(200).json(updatedStudio);
     }
     catch (err) {
         next(err);
