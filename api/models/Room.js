@@ -16,10 +16,6 @@ const RoomSchema = new mongoose.Schema(
             type: Number,
             required: true
         },
-        maxPeople: {
-            type: Number,
-            required: true
-        },
         photos: {
             type: [String],
             required: true
