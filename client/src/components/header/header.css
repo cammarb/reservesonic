@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+}
+
+.header {
+    min-height: 90vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url("https://images.unsplash.com/photo-1598653222000-6b7b7a552625?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bXVzaWMlMjBzdHVkaW98ZW58MHx8MHx8&w=1000&q=80");
+    background-size: cover;
+}
+
+.headerContainer {
+    width: min(98%, 35rem);
+    min-height: 20rem;
+
+    padding: 3rem;
+
+    background-color: white;
+}
+
+.optionsContainer {
+    /* width: 40%; */
+}
+
+.optionsButtons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    margin-bottom: 1.5rem;
+}
+
+.optionButton {
+    padding-bottom: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid transparent;
+    font-weight: bold;
+}
+
+.optionButton svg {
+    font-size: x-large;
+    margin-bottom: 0.8rem;
+    color: black;
+}
+
+.optionButton:hover {
+    border-bottom: 1px solid black;
+}
+
+.optionsCTAContainer {}
