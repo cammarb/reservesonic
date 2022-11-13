@@ -7,7 +7,7 @@ const Footer = () => {
                 <span className="logo">Reserve Sonic</span>
                 <div className="copyright">© Copyright 2022 | All rights reserved.</div>
             </div>
-        </div >
+        </div>
     )
 };
 
