@@ -6,8 +6,8 @@ const Navbar = () => {
             <div className="navContainer">
                 <span className="logo">Reserve Sonic</span>
                 <div className="navItems">
-                    <button className="navButton" style={{ margin: 0 }}>Register</button>
-                    <button className="navButton">Login</button>
+                    <button className="navButton loginButton">Login</button>
+                    <button className="navButton">Register</button>
                 </div>
             </div>
         </div >

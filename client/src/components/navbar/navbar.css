@@ -8,7 +8,7 @@
 }
 
 .navContainer {
-    width: min(98%, 68rem);
+    width: min(98%, 80rem);
     height: 100%;
 
     display: grid;
@@ -35,10 +35,28 @@
     padding: 0.5rem 1.5rem;
     margin-left: 0.8rem;
 
-    color: white;
-    background-color: orangered;
+    color: black;
+    background-color: white;
+
     border-radius: 0.2rem;
     border: none;
 
-    /* border: solid 1px red; */
+    cursor: pointer;
+    transition: all .5s ease-out;
+}
+
+.navButton:hover {
+    background-color: #ff5517;
+    color: white;
+}
+
+.loginButton {
+    margin: 0;
+
+    background: none;
+    color: white;
+}
+
+.loginButton:hover {
+    background-color: #ffffff1a;
 }
