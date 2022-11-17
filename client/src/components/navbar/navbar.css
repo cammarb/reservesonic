@@ -21,7 +21,7 @@
 .logo {
     grid-column: 1;
 
-    color: white;
+    max-width: 100px;
 }
 
 .navItems {
@@ -58,5 +58,5 @@
 }
 
 .loginButton:hover {
-    background-color: #ffffff1a;
+    background-color: #ffffff3e;
 }
