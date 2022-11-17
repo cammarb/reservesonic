@@ -17,7 +17,7 @@
     width: min(98%, 35rem);
     min-height: 20rem;
 
-    padding: 3rem;
+    padding: 1.5rem 3rem 3rem 3rem;
 
     background-color: white;
 }
@@ -34,6 +34,7 @@
 }
 
 .optionButton {
+    padding-top: 1.5rem;
     padding-bottom: 1.5rem;
 
     display: flex;
@@ -44,16 +45,38 @@
     border: none;
     border-bottom: 1px solid transparent;
     font-weight: bold;
+
+    cursor: pointer;
 }
 
 .optionButton svg {
-    font-size: x-large;
     margin-bottom: 0.8rem;
+
     color: black;
+    font-size: x-large;
 }
 
 .optionButton:hover {
     border-bottom: 1px solid black;
+    background-color: #8080800e;
 }
 
 .optionsCTAContainer {}
+
+.CTAbutton {
+    margin: 1.5rem 0 2rem 0;
+    padding: 0.8rem;
+
+    color: white;
+    background-color: #ff5517;
+    border: none;
+    border-radius: 0.2rem;
+
+    font-size: 0.9rem;
+
+    cursor: pointer;
+}
+
+.CTAbutton svg {
+    margin-right: 0.7rem;
+}
